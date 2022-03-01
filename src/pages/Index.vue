@@ -3,6 +3,7 @@
 <!--    <home-page/>-->
 <!--    <product-detail-page/>-->
     <blog-page/>
+<!--    <create-account-page/>-->
   </div>
 </template>
 
@@ -11,9 +12,10 @@ import { defineComponent } from 'vue';
 import HomePage from "pages/HomePage";
 import ProductDetailPage from "pages/ProductDetailPage";
 import BlogPage from "pages/BlogPage";
+import CreateAccountPage from "pages/client-admin/CreateAccountPage";
 
 export default defineComponent({
   name: 'PageIndex',
-  components: {BlogPage, ProductDetailPage, HomePage}
+  components: {CreateAccountPage, BlogPage, ProductDetailPage, HomePage}
 })
 </script>

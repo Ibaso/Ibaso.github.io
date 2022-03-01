@@ -1,6 +1,6 @@
 <template>
 <div >
-  <q-card class="my-card" style="border-radius: 20px; width: 500px">
+  <q-card class="my-card" style="border-radius: 20px; ">
     <q-img  :src="imageSrc" >
                       <q-chip class="q-ma-sm" square size="md" color="secondary" text-color="white"   :label="blogCategory" />
     </q-img>
@@ -33,7 +33,7 @@ export default {
     name:'',
     shortContent:'',
     createdDate:'',
-    
+
   },
 
 }
