@@ -51,7 +51,6 @@
           <q-tab name="tab4" label="FAQs"/>
         </q-tabs>
       </q-toolbar>
-      <q-separator/>
 
       <!--      Toolbar only for Desktop-->
       <q-toolbar class="mobile-hide bg-primary text-white justify-between rounded-borders">
@@ -192,7 +191,6 @@
           </template>
         </q-input>
       </q-toolbar>
-      <br>
 
 
     </q-header>
