@@ -12,8 +12,8 @@
   </div>
 
 <!--    Mobile Version-->
-  <div class="q-pa-md row mobile-only" >
-    <div  class="col-11 text-h6">Popular Categories</div>
+  <div class=" row mobile-only" >
+    <div  class="col-11 q-pl-sm text-h6">Popular Categories</div>
     <q-virtual-scroll
       :items="heavyList"
       virtual-scroll-horizontal

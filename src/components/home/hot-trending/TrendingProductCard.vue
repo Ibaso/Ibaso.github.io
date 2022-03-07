@@ -1,6 +1,6 @@
 <template>
 <div>
-  <q-card style="border-radius: 20px" class="my-card" v-on:mouseenter="isHover = true" v-on:mouseleave="isHover = false" >
+  <q-card   style="border-radius: 20px" class="my-card hover-to-show-link " v-on:mouseenter="isHover = true" v-on:mouseleave="isHover = false" >
 
 
 
@@ -31,11 +31,11 @@
 
     </q-card-section>
 
-    <q-separator />
+    <q-separator v-show="isHover" />
 
-    <q-card-actions class="content-center" v-show="isHover" style="transition: 1s" >
+    <q-card-actions class="content-center hover-to-show "   style="transition: 1s" >
 
-      <q-btn flat color="primary"  >
+      <q-btn flat color="primary" >
         Add to card
       </q-btn>
     </q-card-actions>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+
 export default {
   name: "TrendingProductCard",
   props:{
@@ -60,10 +61,24 @@ export default {
       isHover : false,
       stars : 4
     }
+  },
+  methods:{
+
+  },
+  computed:{
+
   }
 }
 </script>
 
 <style scoped>
+  .hover-to-show {
+    display: none;
+    transition: all .2s ease-in-out;
+  }
 
+  .hover-to-show-link:hover .hover-to-show {
+    display: inline;
+    transition: all .2s ease-in-out;
+  }
 </style>

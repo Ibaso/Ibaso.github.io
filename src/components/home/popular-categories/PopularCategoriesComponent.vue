@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div    class="q-pa-sm col-2">
+  <div    class=" col-2">
     <q-card class="my-card" style="border-radius: 20px">
 
       <q-img style="height: 150px" :src="imageSrc" >

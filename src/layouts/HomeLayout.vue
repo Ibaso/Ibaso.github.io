@@ -1,85 +1,68 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fFf" class="custom-font">
 
-    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
-
-
-      <!--        <div class="row" style="width: 90%; color: white; text-align: center  ">-->
-      <!--          &nbsp &nbsp-->
-      <!--          <q-select borderless v-model="language" :options="languageOptions"/>-->
-      <!--          <q-separator vertical/>-->
-      <!--          &nbsp &nbsp-->
-      <!--          <q-select borderless v-model="currency" :options="currencyOptions"/>-->
-      <!--          <q-separator vertical/>-->
-      <!--          &nbsp &nbsp-->
-
-      <!--          <div class=" row no-wrap justify-center items-center content-start">Need Help? &nbsp-->
-      <!--            <a class="col" href="tel:+998999998999" style="text-decoration: white; background-color: transparent; color: white ">+998999998999</a>-->
-
-      <!--            <div class=""  >-->
-      <!--              <a href="#" style="text-decoration: white; background-color: transparent; color: white ">My Account</a>-->
-      <!--            </div>-->
-
-      <!--          </div>-->
-
-
-      <!--        </div>-->
+    <q-header reveal elevated class="bg-primary text-white " height-hint="98">
 
       <!--      Toolbar only for Desktop-->
-      <q-toolbar class="mobile-hide bg-primary text-white  rounded-borders">
+      <q-toolbar    class="q-ml-sm q-mr-xl mobile-hide bg-primary text-white  rounded-borders">
 
 
-        <q-select borderless v-model="language" :options="languageOptions"/>
-        <q-separator vertical/>
-        &nbsp &nbsp
-        <q-select borderless v-model="currency" :options="currencyOptions"/>
-        <q-separator vertical/>
-        <label> &nbsp Need Help?</label>
-        <label> &nbsp +998901234567 </label>
+        <q-select class="cursor-pointer label-hover" dense borderless v-model="language" :options="languageOptions"/>
+        <q-separator class="q-ma-md " color="indigo-6"  vertical/>
 
-        <q-space/>
+        <q-select class="cursor-pointer label-hover" color="white" dense borderless v-model="currency"
+                  :options="currencyOptions"/>
+        <q-separator class="q-ma-md " color="indigo-6"  vertical/>
+        <label> Need Help?</label>
+        <label class="cursor-pointer label-hover"> &nbsp +998901234567 </label>
+
 
 
         <!--
           notice shrink property since we are placing it
           as child of QToolbar
         -->
-        <q-tabs v-model="tab" shrink stretch>
-          <q-tab name="tab1" label="My Account"/>
-          <q-tab name="tab2" label="About Us"/>
-          <q-tab name="tab3" label="Contact Us"/>
-          <q-tab name="tab4" label="FAQs"/>
-        </q-tabs>
+        <!--        <q-tabs v-model="tab" shrink stretch>-->
+        <!--          <q-tab name="tab1" label="My Account"/>-->
+        <!--          <q-tab name="tab2" label="About Us"/>-->
+        <!--          <q-tab name="tab3" label="Contact Us"/>-->
+        <!--          <q-tab name="tab4" label="FAQs"/>-->
+        <!--        </q-tabs>-->
+        <q-space/>
+        <div class=" cursor-pointer label-hover"> My Account</div>
+        <q-separator class="q-ma-md " color="indigo-6"  vertical/>
+        <div class="  cursor-pointer label-hover"> About Us</div>
+        <q-separator class="q-ma-md " color="indigo-6"  vertical/>
+        <div class=" cursor-pointer label-hover">Contact Us</div>
+        <q-separator class="q-ma-md " color="indigo-6"  vertical/>
+        <div class="q-pr-lg   cursor-pointer label-hover">FAQs</div>
       </q-toolbar>
+      <q-separator  color="indigo-6"/>
 
       <!--      Toolbar only for Desktop-->
-      <q-toolbar class="mobile-hide bg-primary text-white justify-between rounded-borders">
+
+      <div class=" mobile-hide bg-primary">
+        <br>
+      <q-toolbar class=" text-white justify-between rounded-borders">
+
         <q-btn size="xl" flat label="Phonix"/>
         <q-space/>
 
-        <q-card class=" row" style="min-width: 500px">
-          <q-select
-            class="col"
-            filled
-            bg-color="white"
-            v-model="model"
-            use-input
-            input-debounce="0"
-            label="Simple filter"
-            :options="options"
-            @filter="filterFn"
-            style="width: 250px"
-            behavior="menu"
+        <q-card class=" row " style="min-width: 500px; margin-right: 130px">
+          <q-select dense
+                    class="col-4   "
+                    borderless
+                    filled
+                    v-model="model"
+                    :options="options"
+
+                    popup-content-class="label-hover"
+
+
           >
-            <template v-slot:no-option>
-              <q-item>
-                <q-item-section class="text-grey">
-                  No results
-                </q-item-section>
-              </q-item>
-            </template>
+
           </q-select>
-          <q-input class="col" filled borderless bg-color="white" v-model="text" :dense="dense">
+          <q-input dense class="col-8" filled borderless bg-color="white" v-model="text" :dense="dense">
             <template v-slot:append>
               <q-btn round dense flat icon="search"/>
             </template>
@@ -88,27 +71,29 @@
         &nbsp &nbsp &nbsp &nbsp
 
 
-        <div style="min-width: 200px" class="q-pl-lg">
+        <div class=" q-mr-lg">
           <q-icon size="lg" color="white" name="mdi-account-outline"/>
           <label>Create an Account</label>
         </div>
 
-        <div style="min-width: 125px">
+        <div class="q-ml-lg q-mr-lg">
           <q-icon class="cursor-pointer" size="lg" color="white" name="mdi-heart-outline"/>
           <label>My Wish List</label>
         </div>
 
-        <div style="min-width: 125px">
+        <div class="q-ml-lg q-mr-lg">
           <q-icon size="lg" color="white" name="mdi-cart-outline"/>
           <label>My Cart</label>
         </div>
       </q-toolbar>
-      <q-separator/>
-      <div>
+        <br>
+      </div>
+      <q-separator class="q-ml-xl q-mr-xl" color="indigo-6"/>
 
 
-        <!--      Toolbar only for Desktop-->
-        <q-tabs class="mobile-hide" inline-label align="left">
+      <!--      Toolbar only for Desktop-->
+      <div class="mobile-hide q-ml-xl q-mr-xl">
+        <q-tabs  inline-label align="left">
 
           <q-tab color="primary" icon="menu" label="Shop by Department">
 
@@ -222,13 +207,13 @@
         </q-list>
       </q-scroll-area>
     </q-drawer>
-    <q-drawer class="desktop-hide mobile-only"  v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer class="desktop-hide mobile-only" v-model="rightDrawerOpen" side="right" bordered>
       <div class="q-pa-xl" align="center">
 
         <span>
          <q-icon size="xl" color="blue" name="mdi-basket-off-outline"/><br>
          <label>Your Card is Empty</label>
-          <q-btn class="q-mt-md"  rounded color="secondary" label="Return To Shop" @click="toggleRightDrawer" />
+          <q-btn class="q-mt-md" rounded color="secondary" label="Return To Shop" @click="toggleRightDrawer"/>
         </span>
       </div>
     </q-drawer>
@@ -237,79 +222,99 @@
     </q-page-container>
 
 
-        <q-footer elevated class="bg-white text-grey-7 mobile-only">
-          <q-toolbar class="justify-around q-pa-sm">
-            <div align="center">
-              <q-icon class="row" size="md" name="mdi-home-outline" />
-              <label class="row" >Home</label>
-            </div>
-            <div align="center">
-              <q-icon class="row" size="md" name="mdi-account-outline" />
-              <label class="row" >Account</label>
-            </div>
-            <div align="center">
-              <q-icon class="row" size="md" name="mdi-home" />
-              <label class="row" >Home</label>
-            </div>
-            <div align="center">
-              <q-icon class="row" size="md" name="mdi-heart-outline" />
-              <label class="row" >Wishlist</label>
-            </div>
-            <div align="center">
-              <q-icon class="row" size="md" name="mdi-cart-outline" />
-              <label class="row" >Cart</label>
-            </div>
+    <q-footer elevated class="bg-white text-grey-7 mobile-only">
+      <q-toolbar class="justify-around q-pa-sm">
+        <div align="center">
+          <q-icon class="row" size="md" name="mdi-home-outline"/>
+          <label class="row">Home</label>
+        </div>
+        <div align="center">
+          <q-icon class="row" size="md" name="mdi-account-outline"/>
+          <label class="row">Account</label>
+        </div>
+        <div align="center">
+          <q-icon class="row" size="md" name="mdi-home"/>
+          <label class="row">Home</label>
+        </div>
+        <div align="center">
+          <q-icon class="row" size="md" name="mdi-heart-outline"/>
+          <label class="row">Wishlist</label>
+        </div>
+        <div align="center">
+          <q-icon class="row" size="md" name="mdi-cart-outline"/>
+          <label class="row">Cart</label>
+        </div>
 
 
-          </q-toolbar>
-        </q-footer>
+      </q-toolbar>
+    </q-footer>
 
   </q-layout>
 </template>
 
 <script>
-import {ref} from 'vue'
+  import {ref} from 'vue'
 
-export default {
-  setup: function () {
-    const leftDrawerOpen = ref(false)
-    const rightDrawerOpen = ref(false)
+  export default {
 
-    return {
-      language: "O'zbek",
-      languageOptions: ["English", "O'zbek", "Русский"],
-      currency: "UZS",
-      currencyOptions: ["UZS", "USD", "RUB"],
-      leftDrawerOpen,
-      rightDrawerOpen,
-      tab: ref(''),
-      links1: [
-        {icon: 'photo', text: 'Home'},
-        {icon: 'photo_album', text: 'Shop'},
-        {icon: 'book', text: 'Blog'},
-        {icon: 'assistant', text: 'Contact Us'},
-        {icon: 'people', text: 'About Us'},
+    data() {
+      return {
+        language: "O'zbek",
+        languageOptions: ["English", "O'zbek", "Русский"],
+        currency: "UZS",
+        currencyOptions: ["UZS", "USD", "RUB"],
+        leftDrawerOpen: false,
+        rightDrawerOpen: false,
+        model: 'All Categories',
+        tab: ref(''),
+        links1: [
+          {icon: 'photo', text: 'Home'},
+          {icon: 'photo_album', text: 'Shop'},
+          {icon: 'book', text: 'Blog'},
+          {icon: 'assistant', text: 'Contact Us'},
+          {icon: 'people', text: 'About Us'},
 
-      ],
+        ],
 
-      createMenu: [
-        {icon: 'photo_album', text: 'Album'},
-        {icon: 'people', text: 'Shared Album'},
-        {icon: 'movie', text: 'Movie'},
-        {icon: 'library_books', text: 'Animation'},
-        {icon: 'dashboard', text: 'Collage'},
-        {icon: 'book', text: 'Photo book'}
-      ],
+        createMenu: [
+          {icon: 'photo_album', text: 'Album'},
+          {icon: 'people', text: 'Shared Album'},
+          {icon: 'movie', text: 'Movie'},
+          {icon: 'library_books', text: 'Animation'},
+          {icon: 'dashboard', text: 'Collage'},
+          {icon: 'book', text: 'Photo book'}
+        ],
+        options: ['All Categories', 'Top Deals', 'Top Featured Products', 'Top Selling Products', 'Cameras']
+
+      }
+    },
+    methods: {
       toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+        this.leftDrawerOpen = !this.leftDrawerOpen
       },
 
       toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value
+        this.rightDrawerOpen = !this.rightDrawerOpen
       }
     }
+
+
   }
 
-}
-
 </script>
+<style scoped>
+  .label-hover {
+
+  }
+
+  .label-hover:hover {
+    color: rgb(22, 188, 220);
+  }
+
+  .custom-font {
+    font-family: Arial, Helvetica;
+  }
+  .q-layout-header {
+    height: 1px;
+  }
+</style>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="row ">
+    <div class="row q-pl-sm ">
       <div class="col-11 text-h6">Hot Trending Products</div>
 
     </div>
 
 
-    <div class="q-pa-md">
+    <div class="">
       <q-virtual-scroll
         style=""
         :items="heavyList"
@@ -17,7 +17,7 @@
         <div class="row no-wrap">
           <div style="width: 250px" class="q-pa-sm">
 
-              <trending-product-card :image-src="item.imageSrc" :rating="item.rating" :content="item.content" :price="item.price"/>
+              <trending-product-card  :image-src="item.imageSrc" :rating="item.rating" :content="item.content" :price="item.price"/>
 
           </div>
         </div>

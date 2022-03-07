@@ -1,11 +1,11 @@
 <template>
   <div>
-<!--    <home-page/>-->
+    <home-page/>
 <!--    <product-detail-page/>-->
 <!--    <blog-page/>-->
 <!--    <create-account-page/>-->
 <!--    <customer-login-page/>-->
-    <admin-page/>
+<!--    <admin-page/>-->
   </div>
 </template>
 

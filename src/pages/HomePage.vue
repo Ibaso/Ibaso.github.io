@@ -1,5 +1,8 @@
 <template>
-  <div class="q-pa-md bg-white" style="max-width: 100%; margin: 0 auto">
+  <div>
+
+<!--  Desktop version-->
+  <div class="q-pr-xl q-pl-xl bg-grey-2 desktop-only" style="max-width: 100%; margin: 0 auto">
 
     <home-banners/>
     <br>
@@ -22,9 +25,35 @@
     <blog/>
     <br>
 
+    <home-footer/>
 
   </div>
-  <home-footer/>
+
+
+<!--    Mobile Version-->
+    <div class="q-pr-sm q-pl-sm bg-grey-2 mobile-only" style="max-width: 100%; margin: 0 auto">
+
+      <home-banners/>
+      <br>
+      <hot-trending-products/>
+      <br>
+      <popular-categories/>
+      <br>
+      <flash-deals/>
+      <br>
+      <home-banners-jr/>
+      <br>
+      <top-featured-products/>
+      <br>
+      <recommending-for-you/>
+      <br>
+      <blog/>
+      <br>
+
+      <home-footer/>
+
+    </div>
+  </div>
 </template>
 
 <script>
